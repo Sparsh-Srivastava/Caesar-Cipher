@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Caesar's Cipher</title>
+
+    <style>
+      html {
+        --primary: #ff6666;
+        --font: "Andale Mono", "Menlo", "Courier New", Courier, monospace;
+        --dark: #222;
+        --gray: #d8d8d8;
+        --white: #fff;
+        --darkGray: #a2a2a2;
+      }
+
+      body {
+        min-height: 100vh;
+        background: linear-gradient(180deg, #fff 75%, #fff8f8 100%);
+        font-family: var(--font);
+        background-repeat: no-repeat;
+        background-position: calc(100% + 150px) calc(100% + 50px);
+        background-size: 450px;
+        padding: 20px;
+      }
+
+      h1 {
+        color: var(--primary);
+        border-bottom: 5px solid var(--primary);
+        padding: 20px;
+        margin-top: 0px;
+        font-size: 3em;
+        font-weight: 100;
+      }
+
+      label {
+        margin: 20px;
+        color: var(--darkGray);
+      }
+
+      input {
+        display: block;
+        font-family: var(--font);
+        font-size: 2em;
+        padding: 10px;
+        font-weight: 100;
+        border: 3px solid var(--gray);
+        margin: 20px;
+        background-color: var(--white);
+        width: calc(100% - 65px);
+      }
+
+      #encrypted {
+        border-color: var(--dark);
+        background-color: var(--dark);
+        color: var(--white);
+      }
+
+      .mainContainer {
+        max-width: 1000px;
+        margin: 0 auto;
+      }
+
+      hr {
+        border: 1px solid var(--primary);
+        margin: 50px 0px;
+      }
+
+      .orange img {
+        width: 50px;
+        display: block;
+        margin: 0 auto;
+        margin-top: 50px;
+      }
+
+      .btn {
+        background-color: white;
+        border: 1px solid var(--primary);
+        padding: 2vh 5vh;
+        cursor: pointer;
+        border-radius: 2px;
+      }
+    </style>
+  </head>
+  <link rel="stylesheet" href="style.css" />
+  <body>
+    <div class="mainContainer">
+      <h1>Caesar's Cipher</h1>
+
+      <label for="original">Original Messsage</label>
+      <input id="original" type="text" />
+
+      <label for="shift">Shift</label>
+      <input id="shift" />
+
+      <center>
+        <button onclick="runEncrypt(false);" class="btn">Encrypt</button>
+        <button onclick="runEncrypt(true);" class="btn">Decrypt</button>
+      </center>
+
+      <hr />
+
+      <label for="encrypted">Encrypted Message</label>
+      <input id="encrypted" type="text" value="" readonly />
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
